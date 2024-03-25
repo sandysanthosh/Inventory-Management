@@ -47,3 +47,52 @@ if __name__ == '__main__':
 You also need to create an HTML file named "inventory_form.html" with the form code provided in the previous response and place it in the same directory as your Python script.
 
 Make sure you have Flask and pandas installed (`pip install flask pandas`) before running the script. This code will start a Flask web server that listens for form submissions, stores the data in an Excel file, and displays a success message.
+
+
+Here's the HTML code for the inventory form:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory Form</title>
+</head>
+<body>
+
+<h2>Inventory Form</h2>
+
+<form action="/submit_inventory" method="post">
+  <label for="material">Material:</label><br>
+  <input type="text" id="material" name="material"><br>
+  
+  <label for="date">Date:</label><br>
+  <input type="date" id="date" name="date"><br>
+  
+  <label for="timein">Time In:</label><br>
+  <input type="time" id="timein" name="timein"><br>
+  
+  <label for="timeout">Time Out:</label><br>
+  <input type="time" id="timeout" name="timeout"><br>
+  
+  <label for="location">Location:</label><br>
+  <input type="text" id="location" name="location"><br>
+  
+  <label for="personal_name">Personal Name:</label><br>
+  <input type="text" id="personal_name" name="personal_name"><br>
+  
+  <label for="brand">Brand:</label><br>
+  <input type="text" id="brand" name="brand"><br>
+  
+  <label for="client_details">Client Details Received:</label><br>
+  <input type="text" id="client_details" name="client_details"><br><br>
+  
+  <input type="submit" value="Submit">
+</form> 
+
+</body>
+</html>
+```
+
+You can save this code in a file named "inventory_form.html". When the form is submitted, it sends a POST request to the "/submit_inventory" route of your Flask application, which is responsible for processing the form data and storing it in the Excel file.
